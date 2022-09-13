@@ -12,7 +12,7 @@ TSet::TSet(int mp) : BitField(-1)
 }
 
 // конструктор копирования
-TSet::TSet(const TSet &s) : BitField(-1)
+TSet::TSet(const TSet &s) : BitField(-1) //hello there sds
 {
 }
 
