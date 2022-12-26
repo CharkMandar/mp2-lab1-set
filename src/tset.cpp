@@ -11,7 +11,7 @@ TSet::TSet(int mp) : BitField(mp)
 {
     if (mp < 0)
         throw "Invalid value";
-    int MaxPower = mp;
+    this->MaxPower = mp;
 }
 
 // конструктор копирования
@@ -83,8 +83,10 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
-    BitField.GetBit(Elem);
-    return *this;
+
+    TSet tmp(*this);
+    tmp.InsElem(Elem);
+    return tmp;
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
